@@ -1,0 +1,45 @@
+{
+  "name": "wdk-util-shamir-secret-sharing",
+  "version": "1.0.0",
+  "description": "Split BIP39 mnemonic seed phrases into shares using Shamir Secret Sharing and reconstruct them",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha --timeout 10000",
+    "lint": "eslint src/ test/",
+    "lint:fix": "eslint src/ test/ --fix"
+  },
+  "keywords": [
+    "shamir",
+    "secret-sharing",
+    "bip39",
+    "mnemonic",
+    "seed",
+    "wallet",
+    "crypto",
+    "threshold",
+    "split",
+    "combine"
+  ],
+  "author": "Tether.io",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tetherto/wdk-util-shamir-secret-sharing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tetherto/wdk-util-shamir-secret-sharing/issues"
+  },
+  "homepage": "https://github.com/tetherto/wdk-util-shamir-secret-sharing#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "shamir-secret-sharing": "^0.0.4"
+  },
+  "devDependencies": {
+    "chai": "^5.1.0",
+    "eslint": "^8.57.0",
+    "mocha": "^10.4.0"
+  }
+}
