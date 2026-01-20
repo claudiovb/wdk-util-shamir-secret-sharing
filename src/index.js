@@ -141,7 +141,11 @@ export async function split(mnemonic, options) {
 
   // Convert mnemonic to bytes
   const encoder = new TextEncoder()
-  const secretBytes = encoder.encode(normalizedMnemonic)
+  const encoded = encoder.encode(normalizedMnemonic)
+
+  // Ensure we have a pure Uint8Array (not Buffer) for compatibility with shamir-secret-sharing
+  // In Bare runtime, TextEncoder returns Buffer which extends Uint8Array but has a different constructor
+  const secretBytes = encoded.constructor === Uint8Array ? encoded : new Uint8Array(encoded)
 
   // Split the secret using Shamir Secret Sharing
   const shareArrays = await shamirSplit(secretBytes, shares, threshold)
